@@ -1,7 +1,5 @@
 class OembedController < ApplicationController
   include ::OembedUrlParsing
-  require 'open-uri'
-  require 'net/http'
   before_action :validated_request_url, only: :content_preview
 
   def content_preview
@@ -11,10 +9,10 @@ class OembedController < ApplicationController
   private
 
   def url_params
-    params[:url_address]
+    params[:requested_url]
   end
 
-  def url_host
+  def parse_url_host
     @host = URI.parse(url_params).host
   end
 

@@ -2,9 +2,9 @@ module OembedEndpointCreating
   extend ActiveSupport::Concern
 
   def create_endpoint
-    @oembed_url.gsub! '{format}', 'json'
-    full_url = @oembed_url + '?url=' + url_params
-    full_url = full_url + '&format=json' unless full_url.include? 'json'
+    @oembed_url.gsub! "{format}", "json"
+    full_url = @oembed_url + "?url=" + url_params
+    full_url += "&format=json" unless full_url.include? "json"
     get_oembed_json(full_url)
   end
 
