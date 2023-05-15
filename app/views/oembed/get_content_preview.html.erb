@@ -1,0 +1,14 @@
+<div class="content-body">
+  <div class="content-table">
+    <% if @results %>
+      <% if @results["type"] == "video" %>
+        <%= render 'video_table' %>
+      <% else %>
+        <%= render 'link_table' %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div>
+  <%= link_to "돌아가기", root_path, class: "form-control form-control-lg" %>
+</div>

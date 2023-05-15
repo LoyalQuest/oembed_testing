@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root to: "main#index"
-  resources :main, only: [:index]
+
+  get "get_content_preview", to: "oembed#get_content_preview"
 end
