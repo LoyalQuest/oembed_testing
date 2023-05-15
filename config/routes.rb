@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: "main#index"
 
-  get "get_content_preview", to: "oembed#get_content_preview"
+  get "content_preview", to: "oembed#content_preview"
 end
