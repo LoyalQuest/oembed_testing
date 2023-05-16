@@ -1,9 +1,8 @@
 class TestFiveJob < ApplicationJob
   queue_as :default
 
-  def perform
-    arr = [2, 4, 7, 8, 10]
-    find_unique_index(arr)
+  def perform(input)
+    find_unique_index(input)
   end
 
   def find_unique_index(array)
